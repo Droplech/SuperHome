@@ -1,30 +1,11 @@
-$(document).ready(function(){
-    $('.introduce_phone').inputmask("+7(999)999-9999");
+$(window).on('load', function() {
 
-    jQuery.validator.addMethod("checkMaskPhone", function(value, element) {
-        return /\+\d{1}\(\d{3}\)\d{3}-\d{4}/g.test(value); 
-    });
-
-    var form = $('.form');
-
-    form.validate();
-
-    $.validator.addClassRules({
-        'introduce_phone': {
-            checkMaskPhone: true,
-        }
-    });
-
-    form.submit(function(e){
-        e.preventDefault();
-        if (form.valid()) {
-            
-        }
-        return;
-    });
+    $('body').addClass('loaded_hiding');
+    $('body').addClass('body_hidden');
+    window.setTimeout(function () {
+        $('body').addClass('loaded');
+        $('body').removeClass('body_hidden');
+        $('body').removeClass('loaded_hiding');
+        $('.preloader').fadeOut(300)
+    }, 3000);
 })
-
-
-
-
-

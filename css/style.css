@@ -1,10 +1,21 @@
 body{
     margin: 0;
     background-color: #F9F9FF;
+    
+}
+.page{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
 }
 *{
     font-family: 'Montserrat', sans-serif;
     box-sizing: border-box;
+}
+
+.body_hidden{
+    overflow: hidden;
 }
 p,h1,h2,h3{
     margin: 0;
@@ -72,8 +83,9 @@ input,button{
     min-height: 80px;
 }
 .benefits .benefits_item .txt{
-    margin-top: 20px;
+    margin-top: 10px;
 }
+
 .benefits .benefits_item .txt span{
     font-weight: 600;
     font-size: 16px;
@@ -88,11 +100,21 @@ input,button{
     font-size: 18px;
     color: #33394E;
 }
+
+.content_wrapper .right_block .get_started{
+    font-weight: 700;
+    font-size: 18px;
+    color: #000;
+    margin-top: 19px;
+}
 .right_block form{
     width: 100%;
     background: #D1ECF9;
     padding: 25px 20px;
     margin-top: 15px;
+}
+#error{
+    color: red;
 }
 .right_block form label{
     font-weight: 600;
@@ -100,7 +122,7 @@ input,button{
     color: #030B26;
     display: block;
     margin-bottom: 5px;
-    
+    padding-left: 22px;
 }
 
 .right_block form .name_body{
@@ -134,11 +156,12 @@ input,button{
 .right_block form .check_btn{
     display: flex;
     justify-content: space-between;
-    margin-top: 25px;
+    margin-top: 21px;
 }
 .right_block form .check_btn .check_perrent{
     display: flex;
     align-items: center;
+    padding-left: 0;
 }
 .right_block form .check_btn .title{
     font-weight: 600;
@@ -213,7 +236,9 @@ input,button{
 .right_block form button img{
     margin-left: 10px;
 }
-
+.right_block form button svg{
+    margin-right: 10px;
+}
 
 .right_block .description{
     font-weight: 400;
@@ -232,9 +257,8 @@ input,button{
 .footer_wrapper{
     display: flex;
     justify-content: space-between;
-    
     align-items: center;
-    padding: 36px 0;
+    padding: 39px 0;
 }
 
 .footer_wrapper .autor{
@@ -265,6 +289,7 @@ input,button{
     width: 400px;
     background: #D1ECF9;
     padding: 35px 22px ;
+    margin-top: 35px;
 }
 .content_wrapper .assistent_block .title{
     font-weight: 700;
@@ -276,10 +301,13 @@ input,button{
     font-size: 27px;
     line-height: 40px;
 }
+.assistent_block .assistent{
+    margin-top: 30px;
+}
 .assistent_block .assistent_name{
     display: flex;
     align-items: center;
-    margin-top: 30px;
+    
 }
 .assistent_block .assistent_name .img{
     width: 70px;
@@ -287,6 +315,9 @@ input,button{
     border-radius: 50%;
     overflow: hidden;
     margin-right: 15px;
+}
+.assistent_block .assistent_name .img img{
+    width: 100%;
 }
 .assistent_block .assistent_name .txt span{
     display: block;
@@ -305,7 +336,7 @@ input,button{
 .assistent_block .assistent_message{
     width: 100%;
     padding: 18px 16px;
-    background-color: #fff;
+    /* background-color: #fff; */
     margin-top: 25px;
     position: relative;
     z-index: 1;
@@ -315,7 +346,7 @@ input,button{
     content: "";
     width: 16px;
     height: 16px;
-    background-color: #fff;
+    /* background-color: #fff; */
     position: absolute;
     top: -8px;
     left: 26px;
@@ -323,36 +354,41 @@ input,button{
     z-index: -1;
 }
 
+
+
+/* ---typing---- */
+
 .typing-indicator {
-    background-color: #e6e7ed;
+    background-color: #fff;
     will-change: transform;
     width: auto;
     border-radius: 50px;
-    padding: 20px;
+    padding: 13px;
     display: table;
-    margin: 0 auto;
+    margin-left: 55px;
+    margin-top: -20px;
     position: relative;
     animation: 2s bulge infinite ease-out;
 }
 .typing-indicator::before, .typing-indicator::after {
     content: '';
     position: absolute;
-    bottom: -2px;
+    bottom: 23px;
     left: -2px;
-    height: 20px;
-    width: 20px;
+    height: 14px;
+    width: 14px;
     border-radius: 50%;
-    background-color: #e6e7ed;
+    background-color: #fff;
 }
 .typing-indicator::after {
-    height: 10px;
-    width: 10px;
-    left: -10px;
-    bottom: -10px;
+    height: 7px;
+    width: 7px;
+    left: -9px;
+    bottom: 36px;
 }
 .typing-indicator span {
-    height: 15px;
-    width: 15px;
+    height: 10px;
+    width: 10px;
     float: left;
     margin: 0 1px;
     background-color: #9e9ea1;
@@ -380,20 +416,70 @@ input,button{
    }
 }
 
+/* ---typing----// */
 
-
-.loader{
+.preloader{
     width: 100vw;
     height: 100vh;
     background: #F9F9FF;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
 
 
-@media screen and (max-width: 1100px) {
+.assistent_message_txt{
+    display: none;
+}
+.assistent_message_txt span{
+    font-weight: 700;
+    font-size: 19px;
+    color: #33394E;
+}
+.assistent_message_txt p{
+    font-weight: 500;
+    font-size: 19px;
+    color: #33394E;
+    line-height: 26px;
+    letter-spacing: 0.1px;
+}
+
+
+.assistent_block{
+    display: none;
+}
+
+.assistent_message-active{
+    background-color: #fff;
+}
+.assistent_message-active::before{
+    background-color: #fff;
+}
+.assistent_message-active .typing-indicator{
+    display: none;
+}
+.assistent_message-active .assistent_message_txt{
+    display: block;
+}
+
+
+
+.right_block-active .first_block_form{
+    display: none;
+}
+
+.right_block-active .assistent_block{
+    display: block;
+}
+
+
+
+@media screen and (max-width: 1110px) {
     .content_wrapper{
         justify-content: center;
     }
@@ -464,7 +550,8 @@ input,button{
     .content .saving,
     .content_wrapper .left_block h1,
     .content_wrapper .right_block .title,
-    .right_block .description{
+    .right_block .description,
+    .content_wrapper .right_block .get_started{
         padding: 0 16px;
     }
 
@@ -491,22 +578,118 @@ input,button{
         padding: 0;
     }
     .assistent_block .assistent_message{
-        min-height: 171px;
+        min-height: 139px;
+    }
+    .content_wrapper .right_block .get_started{
+        margin-top: 14px;
+    }
+    .content_wrapper .right_block{
+        margin-top: 24px;
+    }
+    .content_wrapper{
+        margin-top: 16px;
+    }
+    .right_block form .check_btn{
+        flex-direction: column;
+    }
+    .right_block form .check_btn .title{
+        padding: 0;
+    }
+    .right_block form .check{
+        margin-top: 26px;
+        padding-left: 10px;
+    }
+    .right_block form .check > label + label{
+        margin-left: 32px;
+    }
+    .right_block form .check_btn .fake{
+        width: 26px;
+        height: 26px;
+    }
+    .right_block form .check_btn .fake::before{
+        width: 11px;
+        height: 11px;
+    }
+    .right_block form .check_btn .txt{
+        margin-left: 10px;
+    }
+    .right_block-active{
+        margin-top: 0;
+    }
+    
+    .right_block-active .saving{
+        display: none;
+    }
+    .right_block-active .assistent_block{
+        margin-top: 0;
+    }
+    .footer-active{
+        margin-top: 0 !important;
+    }
+    .footer_wrapper .autor{
+        margin-bottom: 34px;
+    }
+    .assistent_message_txt span,
+    .assistent_message_txt p{
+        font-size: 16px;
+    }
+    
+    .assistent_message_txt p br{
+        display: none;
+    }
+    .assistent_block .assistent_message{
+        padding: 20px 22px;
+    }
+    .content_wrapper .assistent_block .subtitle{
+        font-size: 25px;
+        width: 94%;
+    }
+    .right_block form button{
+        margin-top: 30px;
+    }
+    .footer{
+        margin-top: 40px;
+    }
+    .container{
+        padding: 0 16px;
+    }
+    .footer_wrapper{
+        padding: 32px 0 38px;
+    }
+    .right_block form{
+        padding: 32px 16px 28px;
+    }
+    .right_block form{
+        margin-top: 17px;
+    }
+    .content{
+        margin-top: 50px;
+    }
+    .right_block-active .right_block {
+        margin-top: 0;
+    }
+    .content_wrapper .assistent_block .subtitle{
+        font-size: 25px;
+    }
+    .assistent_block .assistent{
+        margin-top: 40px;
+    }
+    .content_wrapper .assistent_block{
+        padding: 40px 16px 43px;
+    }
+    .right_block-active .left_block h1{
+        display: none;
+    }
+    .right_block-active .content_wrapper{
+        margin-top: 0;
+    }
+    .content_wrapper .assistent_block .subtitle{
+        font-weight: 400;
+        line-height: 37px;
     }
 }
 
-@media screen and (max-width: 400px){
-    .content_wrapper .right_block{
-        width: 100%;
-    }
-    .benefits .benefits_item .txt span{
-        font-size: 12px;
-    }
-    .content_wrapper .right_block .title,
-    .footer_wrapper .autor{
-        font-size: 16px;
-    }
-}
+
 
 
 
