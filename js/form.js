@@ -94,7 +94,7 @@ $(document).ready(function(){
         }else{
             $("#acept").html(acept);
             $("#error").html("");
-            location.assign('sms:5552345678?body=Hello%20World');
+            location.assign('sms:3100001111?body=Hello%20SuperHome!%20I\'m%20interested%20in%20getting%20a%20solar%20panel%20install%20quote%20for%20my%20home.');
             
         }
     }
