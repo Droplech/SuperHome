@@ -67,7 +67,37 @@ $(document).ready(function(){
 
 
 
+    $('#form2').bind("submit",checkForm);
+    function checkForm(e){
+        e.preventDefault()
 
+        var el = document.getElementById('form2')
+
+       
+        var zip_code = el.zip_code.value;
+        var fail = "";
+        var acept = "Форма заполнена";
+        
+        if(zip_code == "")
+        fail = "All fields must be filled in correctly";
+        
+        else if(zip_code.length < 5 || zip_code.length > 5)
+        fail = "Enter a valid zip code"
+    
+
+       
+        console.log("zip_code"  + " " + zip_code + ";");
+        
+        if( fail != ""){
+            $("#error").html(fail);
+            $("#acept").html("");
+        }else{
+            $("#acept").html(acept);
+            $("#error").html("");
+            location.assign('sms:5552345678?body=Hello%20World');
+            
+        }
+    }
 
 
 
